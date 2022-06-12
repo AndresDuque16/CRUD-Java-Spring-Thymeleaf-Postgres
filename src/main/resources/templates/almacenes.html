@@ -1,0 +1,56 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <title>Almacenes</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <h1>Modulo Almacenes</h1>
+        <div class="row">
+            <div class="col-md-3 offset-md" style="padding-bottom: 1em">
+                <a th:href="@{/almacenes/nuevo}" class="btn btn-primary">Agregar Almacen</a>
+
+            </div>
+
+        </div>
+    </div>
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Gerente</th>
+                     <!-- <th>Editar/Eliminar</th> -->
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="almacen : ${almacenes}">
+                    <td th:text="${almacen.nombre}">1</td>
+                    <td th:text="${almacen.direccion}">2</td>
+                    <td th:text="${almacen.gerente}">3</td>
+                    <td>
+                       <!-- <a th:href="@{/almacenes/editar/{id}(id=${almacen.id})}" class="btn btn-primary">EDITAR</a> -->
+                        <a th:href="@{/almacenes/{id}(id=${almacen.id})}" class="btn btn-primary">ELIMINAR</a>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+</div>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</body>
+</html>
